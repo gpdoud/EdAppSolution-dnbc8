@@ -10,19 +10,22 @@ namespace EdAppProject {
         public string Lastname;
         public int SAT;
         public double GPA;
-        public int MajorId;
+        public Major Major;
 
-        public Student(int id, string firstname, string lastname, int sat, double gpa, int majorid) {
+        public Student(int id, string firstname, string lastname, 
+            int sat, double gpa, Major major) {
             Id = id;
             Firstname = firstname;
             Lastname = lastname;
             SAT = sat;
             GPA = gpa;
-            MajorId = majorid;
+            Major = major;
         }
 
         public void Print() {
-            Console.WriteLine($"Id={Id}, Name={Firstname} {Lastname}, SAT={SAT}, GPA={GPA}, MajorId={MajorId}");
+            Console.WriteLine($"Id={Id}, Name={Firstname} {Lastname}, " +
+                $"SAT={SAT}, GPA={GPA}, Major={Major.Description}" +
+                $", MinSat Required={Major.MinSat}");
         }
     }
 }
